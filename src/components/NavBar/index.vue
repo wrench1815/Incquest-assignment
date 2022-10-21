@@ -34,7 +34,7 @@
           <router-link
             class="nav-link"
             exact-active-class="text-primary"
-            to="/product-list"
+            to="/product/list"
             >Product List</router-link
           >
         </div>
