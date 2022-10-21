@@ -31,7 +31,10 @@
             to="/login"
             >Login</router-link
           >
-          <router-link class="nav-link" exact-active-class="text-primary" to="/"
+          <router-link
+            class="nav-link"
+            exact-active-class="text-primary"
+            to="/product-list"
             >Product List</router-link
           >
         </div>
