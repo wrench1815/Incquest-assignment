@@ -24,6 +24,7 @@
         Total Products: {{ this.productList.length }}
       </p>
     </div>
+
     <section class="container-fluid">
       <section class="row gy-4" v-if="loading">
         <div

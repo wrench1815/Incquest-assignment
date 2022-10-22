@@ -87,4 +87,8 @@ export default {
   width: 48px;
   transition: all 0.2s ease-in-out;
 }
+
+* {
+  transition: all 0.3s ease-in-out;
+}
 </style>

@@ -12,12 +12,6 @@
 
       <h5 class="text-primary placeholder placeholder-xs w-25"></h5>
 
-      <p class="placeholder placeholder-sm w-100 mt-4"></p>
-      <p class="placeholder placeholder-sm w-75"></p>
-      <p class="placeholder placeholder-sm w-50"></p>
-      <p class="placeholder placeholder-sm w-75"></p>
-      <p class="placeholder placeholder-sm w-50"></p>
-
       <br />
 
       <a class="placeholder btn btn-primary w-25 mt-4"> </a>
@@ -36,6 +30,6 @@ export default {
 
 <style scoped>
 .box {
-  height: 14rem;
+  height: 12rem;
 }
 </style>

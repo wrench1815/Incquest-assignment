@@ -15,23 +15,19 @@
         />
       </RouterLink>
     </div>
-    <div class="card-body">
+    <div class="card-body mb-0 pb-0">
       <h4>{{ item.name }}</h4>
 
       <h5 class="text-primary">Rs. {{ item.price }}</h5>
 
-      <p>
-        {{ item.description }}
-      </p>
-
       <RouterLink
         :to="`/product/${item.id}`"
-        class="d-inline-block text-primary pointer ripple"
+        class="d-inline-block text-primary pointer ripple mt-3"
         data-mdb-ripple-unbound="true"
         data-mdb-ripple-color="primary"
       >
         <span class="d-flex detail-btn"
-          ><span class="border-bottom border-primary"> see more </span>
+          ><span class="border-bottom border-primary"> show details </span>
           <i class="ri-arrow-right-s-line"></i>
         </span>
       </RouterLink>
