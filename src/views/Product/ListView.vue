@@ -36,7 +36,9 @@
       </section>
 
       <section v-else>
-        <div v-if="productList.length == 0">Nothing to show here</div>
+        <div v-if="productList.length == 0">
+          <Nothing :message="'No Products Found'" />
+        </div>
 
         <div class="row gy-4" v-else>
           <div
@@ -55,6 +57,7 @@
 <script>
 import ProductListCard from '@/components/Product/ListCard.vue'
 import ProductLoaderCard from '@/components/Product/LoaderCard.vue'
+import Nothing from '@/components/Product/Nothing.vue'
 import NavBar from '@/components/NavBar/index.vue'
 
 export default {
@@ -63,6 +66,7 @@ export default {
   components: {
     ProductListCard,
     ProductLoaderCard,
+    Nothing,
     NavBar,
   },
 
