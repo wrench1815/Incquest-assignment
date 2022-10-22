@@ -1,6 +1,48 @@
 <template>
-  <div>
-    <h1 class="text-primary">Home</h1>
+  <div class="container">
+    <div class="card my-4">
+      <div class="card-body">
+        <h3>
+          This Demo is an Internship Assignment submitted by Hardeep Kumar to
+          Incquet solutions.
+        </h3>
+        <br />
+        <h5>Below are some of the Insights on what is in this Demo.</h5>
+        <ul>
+          <li>4 Pages: Home, Login, Product List and Product detail</li>
+          <ul>
+            <li>
+              Home: The current page containing some information what is inside
+            </li>
+            <li>Login: The Endpoint created as per Assignment</li>
+            <li>Product List: The Endpoint created as per Assignment</li>
+            <li>Product Detail: The Endpoint created as per Assignment</li>
+          </ul>
+        </ul>
+
+        <h3>Additional Notes:</h3>
+
+        <p class="note note-danger">
+          <span class="h5">The Login page wont work.</span>
+          <br />
+          <strong>Reason:</strong> The API that was told to be used for it does
+          not have any CORS Policy. Therefore it does not allow any requests
+          from the Browser. On the other hand whne using Curl or API Clients,
+          those request are done by browsers so by nature the CORS are ingnore.
+          However, The login page works correctly, which can be tested by
+          changing the API endpoint in the view. Also it was tested with my own
+          api.
+        </p>
+
+        <p class="note note-danger">
+          <strong>Login Page Validation:</strong> As per Assignment, the
+          password rule were not in accordance to the API's accepted rule(which
+          is just alphanumeric string) and the provided api do not use email as
+          well instead it use username strategy, to make the page work, toggle
+          'Bypass Validation'.
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
