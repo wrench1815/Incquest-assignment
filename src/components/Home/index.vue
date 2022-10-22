@@ -6,7 +6,17 @@
           This Demo is an Internship Assignment submitted by Hardeep Kumar to
           Incquet solutions.
         </h3>
-        <br />
+
+        <h4 class="d-flex">
+          Source:
+          <a
+            class="text-dark ms-2"
+            href="https://github.com/wrench1815/Incquest-assignment"
+            target="_blank"
+            ><i class="ri-github-fill"></i
+          ></a>
+        </h4>
+
         <h5>Below are some of the Insights on what is in this Demo.</h5>
         <ul>
           <li>4 Pages: Home, Login, Product List and Product detail</li>
