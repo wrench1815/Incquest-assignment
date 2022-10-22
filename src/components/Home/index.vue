@@ -20,6 +20,38 @@
           </ul>
         </ul>
 
+        <h3>Tech Stack</h3>
+        <ul>
+          <li>
+            <a href="https://v2.vuejs.org" target="_blank">Vue 2</a>
+          </li>
+          <li>
+            <a href="https://www.npmjs.com/package/vue-axios" target="_blank"
+              >axios</a
+            >
+          </li>
+          <li>
+            <a href="https://mdbootstrap.com/" target="_blank"
+              >Material Design Bootstrap(MDB)</a
+            >
+          </li>
+          <li>
+            <a href="https://remixicon.com" target="_blank">Remix Icon</a>
+          </li>
+          <li>
+            <a href="https://v3.router.vuejs.org" target="_blank"
+              >Vue Router (v3)</a
+            >
+          </li>
+          <li>
+            <a href="https://v3.vuex.vuejs.org" target="_blank">Vuex (v3)</a>
+          </li>
+        </ul>
+
+        <h4>
+          Hosted on: <a href="https://vercel.com/" target="_blank">Vercel</a>
+        </h4>
+
         <h3>Additional Notes:</h3>
 
         <p class="note note-danger">
