@@ -59,7 +59,7 @@
         </ul>
 
         <h4>
-          Hosted on: <a href="https://vercel.com/" target="_blank">Vercel</a>
+          Hosted on: <a href="https://netlify.com/" target="_blank">Netlify</a>
         </h4>
 
         <h3>Additional Notes:</h3>

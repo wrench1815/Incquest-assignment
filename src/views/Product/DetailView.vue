@@ -79,16 +79,6 @@
       </section>
     </section>
 
-    <!-- Button trigger modal -->
-    <button
-      type="button"
-      class="btn btn-primary"
-      data-mdb-toggle="modal"
-      data-mdb-target="#imageModal"
-    >
-      Launch demo modal
-    </button>
-
     <!-- Image Preview Modal -->
     <div
       class="modal top fade"
