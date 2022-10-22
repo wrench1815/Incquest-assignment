@@ -1,13 +1,19 @@
 <template>
   <div class="card card-shadow mt-4 h-100">
-    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-      <a class="">
+    <div
+      class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 rounded-5"
+    >
+      <RouterLink
+        :to="`/product/${item.id}`"
+        class="overflow-hidden d-block rounded-5 shadow ripple"
+        data-mdb-ripple-color="primary"
+      >
         <img
           :src="item.image"
           alt="product image"
-          class="img-fluid w-100 shadow rounded-5"
+          class="img-fluid w-100 scale rounded-5"
         />
-      </a>
+      </RouterLink>
     </div>
     <div class="card-body">
       <h4>{{ item.name }}</h4>
@@ -18,12 +24,17 @@
         {{ item.description }}
       </p>
 
-      <a class="d-inline-block text-primary pointer">
+      <RouterLink
+        :to="`/product/${item.id}`"
+        class="d-inline-block text-primary pointer ripple"
+        data-mdb-ripple-unbound="true"
+        data-mdb-ripple-color="primary"
+      >
         <span class="d-flex detail-btn"
           ><span class="border-bottom border-primary"> see more </span>
           <i class="ri-arrow-right-s-line"></i>
         </span>
-      </a>
+      </RouterLink>
     </div>
     <div class="card-footer text-muted">
       <span class="d-flex gap-1">
@@ -68,5 +79,15 @@ export default {
 
 .pointer {
   cursor: pointer;
+}
+
+.scale {
+  transition: all 0.3s ease-in-out !important;
+}
+
+.scale:hover {
+  transition: all 0.3s ease-in-out !important;
+  transform: scale(1.1);
+  transform-origin: 50%;
 }
 </style>
