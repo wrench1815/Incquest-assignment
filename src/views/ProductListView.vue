@@ -1,19 +1,50 @@
 <template>
   <section>
+    <NavBar class="z-index-1000">
+      <template v-slot:searchBar v-if="loading">
+        <div class="placeholder-wave placeholder placeholder-xs w-25"></div>
+      </template>
+
+      <template v-slot:searchBar v-else>
+        <form class="w-auto" @submit.prevent="searchProduct">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Search Product"
+            aria-label="Search"
+            v-model="searchTerm"
+          />
+        </form>
+      </template>
+    </NavBar>
+
     <div class="card card-body mb-4 pb-1">
       <h1>Product Listing</h1>
+      <p class="text-danger fw-bold">
+        Total Products: {{ this.productList.length }}
+      </p>
     </div>
     <section class="container-fluid">
-      <section v-if="loading">Loading</section>
+      <section class="row gy-4" v-if="loading">
+        <div
+          class="col-12 col-md-6 col-lg-3 col-xxl-2 my-4"
+          v-for="item in 5"
+          :key="item"
+        >
+          <ProductLoaderCard />
+        </div>
+      </section>
 
       <section v-else>
-        <div class="row gy-4">
+        <div v-if="productList.length == 0">Nothing to show here</div>
+
+        <div class="row gy-4" v-else>
           <div
             class="col-12 col-md-6 col-lg-3 col-xxl-2 my-4"
             v-for="item in productList"
             :key="item.id"
           >
-            <productListCard :item="item" />
+            <ProductListCard :item="item" />
           </div>
         </div>
       </section>
@@ -23,12 +54,16 @@
 
 <script>
 import ProductListCard from '@/components/Product/ListCard.vue'
+import ProductLoaderCard from '@/components/Product/LoaderCard.vue'
+import NavBar from '@/components/NavBar/index.vue'
 
 export default {
   name: 'ProductListView',
 
   components: {
     ProductListCard,
+    ProductLoaderCard,
+    NavBar,
   },
 
   data() {
@@ -36,6 +71,8 @@ export default {
       productList: [],
       loading: true,
       api: 'https://61922b19aeab5c0017105dfb.mockapi.io/product',
+
+      searchTerm: '',
     }
   },
 
@@ -43,6 +80,19 @@ export default {
     async getProductList() {
       return this.axios.get(this.api).then((resp) => {
         this.productList = resp.data
+      })
+    },
+
+    async searchProduct() {
+      let api = this.api
+      if (this.searchTerm.length != 0) {
+        api = `${this.api}?name=${this.searchTerm}`
+      }
+      this.loading = true
+
+      return this.axios.get(api).then((resp) => {
+        this.productList = resp.data
+        this.loading = false
       })
     },
   },
@@ -55,27 +105,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.detail-btn {
-  transition: all 0.3s ease-in-out !important;
-}
-
-.detail-btn:hover i {
-  padding-left: 0.3rem;
-  transition: all 0.3s ease-in-out !important;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-.card-shadow {
-  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05) !important;
-}
-
-.card-shadow:hover {
-  box-shadow: 0 2px 15px -3px rgb(0 0 0 / 16%),
-    0 10px 20px -2px rgb(0 0 0 / 10%) !important;
-  transition: all 0.3s ease-in-out;
-}
-</style>
+<style scoped></style>

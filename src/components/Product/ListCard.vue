@@ -47,4 +47,26 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.card-shadow {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05) !important;
+}
+
+.card-shadow:hover {
+  box-shadow: 0 2px 15px -3px rgb(0 0 0 / 16%),
+    0 10px 20px -2px rgb(0 0 0 / 10%) !important;
+  transition: all 0.3s ease-in-out;
+}
+.detail-btn {
+  transition: all 0.3s ease-in-out !important;
+}
+
+.detail-btn:hover i {
+  padding-left: 0.3rem;
+  transition: all 0.3s ease-in-out !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+</style>

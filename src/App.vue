@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <!-- nav -->
-    <NavBar class="z-index-1000" />
-    <!-- nav -->
-
     <router-view />
 
     <!-- foot -->
@@ -13,12 +9,10 @@
 </template>
 
 <script>
-import NavBar from '@/components/NavBar/index.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   components: {
-    NavBar,
     Footer,
   },
 }

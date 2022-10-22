@@ -1,5 +1,7 @@
 <template>
   <div>
+    <NavBar class="z-index-1000" />
+
     <div class="container py-5 my-5 card card-body">
       <div class="row d-flex align-items-center justify-content-center">
         <div class="col-md-5 col-lg-7 col-xl-6 d-none d-md-block">
@@ -105,123 +107,6 @@
       </div>
     </div>
 
-    <!--  -->
-    <section class="bg-image vh-100 bg-img min-vh-100 d-none">
-      <div class="mask"></div>
-      <div class="container my-5 py-5">
-        <div class="row">
-          <div class="col-lg-4 col-md-7 col-12 mx-auto">
-            <div class="card shadow-6-strong">
-              <div class="card-header p-0 mt-n4 mx-3">
-                <div class="bg-primary rounded-5 shadow py-3 pe-1">
-                  <h4 class="text-white text-center mt-2 mb-0">Login</h4>
-                </div>
-              </div>
-
-              <div class="card-body">
-                <form role="form" @submit.prevent="login">
-                  <div class="form-outline">
-                    <input
-                      type="text"
-                      id="email"
-                      class="form-control"
-                      v-model="user.email"
-                      @keyup="validateEmail"
-                    />
-                    <label class="form-label" for="form1email">Email</label>
-                  </div>
-                  <div
-                    class="text-danger"
-                    :class="{
-                      'mb-3': !formHelper.email,
-                      'mb-1': formHelper.email,
-                    }"
-                  >
-                    {{ formHelper.email }}
-                  </div>
-
-                  <div class="form-outline">
-                    <input
-                      :type="showPassword ? 'text' : 'password'"
-                      id="password"
-                      class="form-control"
-                      v-model="user.password"
-                      @keyup="validatePassword"
-                    />
-                    <label class="form-label" for="password">Password</label>
-                  </div>
-                  <div
-                    class="text-danger"
-                    :class="{
-                      'mb-2': !formHelper.password,
-                      'mb-1': formHelper.password,
-                    }"
-                  >
-                    {{ formHelper.password }}
-                  </div>
-
-                  <!-- show password -->
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      v-model="showPassword"
-                      id="showPassword"
-                    />
-                    <label class="form-check-label" for="showPassword"
-                      >Show Password</label
-                    >
-                  </div>
-
-                  <!-- bypass validation -->
-                  <div class="form-check mb-2">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      v-model="bypassValidation"
-                      id="bypassValidation"
-                    />
-                    <label class="form-check-label" for="bypassValidation"
-                      >Bypass Validation</label
-                    >
-                  </div>
-
-                  <div class="d-flex justify-content-center gap-3">
-                    <button
-                      type="submit"
-                      class="btn btn-primary"
-                      :class="
-                        user.email && user.password && validated
-                          ? ''
-                          : bypassValidation
-                          ? ''
-                          : 'disabled'
-                      "
-                    >
-                      Submit
-                    </button>
-
-                    <button
-                      type="reset"
-                      class="btn btn-warning"
-                      @click="resetForm"
-                    >
-                      Reset
-                    </button>
-                  </div>
-                  <p class="note note-success mt-4">
-                    <strong>Note:</strong>The Validation and the data needed as
-                    pe rthe api and the task are completely different. In order
-                    to succesfully run the operations as per assignment, toggle
-                    'Bypass Validation'.
-                  </p>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- Modal -->
     <div
       class="modal fade"
@@ -257,9 +142,14 @@
 
 <script>
 import { Input, Modal } from 'mdb-ui-kit'
+import NavBar from '@/components/NavBar/index.vue'
 
 export default {
   name: 'LoginView',
+
+  components: {
+    NavBar,
+  },
 
   data() {
     return {
@@ -361,7 +251,7 @@ export default {
             console.log(resp.data)
             const token = resp.data.token
             this.$store.commit('setToken', token)
-            // this.$router.push('/')
+            this.$router.push('/product/list')
           })
           .catch((resp) => {
             if (resp.response.data.reason) {
