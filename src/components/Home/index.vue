@@ -70,10 +70,10 @@
           <strong>Reason:</strong> The API that was told to be used for it does
           not have any CORS Policy. Therefore it does not allow any requests
           from the Browser. On the other hand when using Curl or API Clients,
-          those request are not done by browsers or browser like environment so by nature, the CORS are ingnored.
-          However, The login page works correctly, which can be tested by
-          changing the API endpoint in the view. Also it was tested with my own
-          api.
+          those request are not done by browsers or browser like environment so
+          by nature, the CORS are ingnored. However, The login page works
+          correctly, which can be tested by changing the API endpoint in the
+          view. Also it was tested with my own api.
         </p>
 
         <p class="note note-danger">
